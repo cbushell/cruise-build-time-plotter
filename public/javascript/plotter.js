@@ -4,8 +4,20 @@ $(document).ready(
         function() {
 
           var builds = [
+            {   url: "http://localhost:9292/demo/0.csv",
+                legend: "Series 0"
+            },
             {   url: "http://localhost:9292/demo/1.csv",
-              legend: "Start"
+                legend: "Series 1"
+            },
+            {   url: "http://localhost:9292/demo/2.csv",
+                legend: "Series 2"
+            },
+            {   url: "http://localhost:9292/demo/3.csv",
+                legend: "Series 3"
+            },
+            {   url: "http://localhost:9292/demo/4.csv",
+                legend: "Series 4"
             }
           ];
 
