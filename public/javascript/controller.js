@@ -21,7 +21,21 @@ $(document).ready(function() {
           ];
 
   $.each(builds, function(index, src) {
-    $("#src").append("<input type='text' value='" + src.url + "' id='series" + index + "'></input>");
+    var markup =
+            "<div id='{seriesId}'>" +
+              "<input type='text' value='{url}' class='url' />" +
+              "<input type='text' value='{legend}' class='legend' />" +
+            "</div>";
+
+    markup = markup.replace("{url}", src.url);
+    markup = markup.replace("{legend}", src.legend);
+    markup = markup.replace("{seriesId}", "series" + index);
+    $("#series").append($(markup));
+  });
+
+
+  $("#chart").bind("click", function(){
+    $("#series").toggle();
   });
 
 
