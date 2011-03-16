@@ -1,7 +1,7 @@
 var Plotter = {
   plot: function() {
     $.plot(
-            $("#all_builds"),
+            $("#chart"),
             all_builds_series, {
               xaxis: { mode: "time" },
               yaxis: { tickFormatter:

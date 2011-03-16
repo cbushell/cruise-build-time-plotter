@@ -20,6 +20,11 @@ $(document).ready(function() {
             }
           ];
 
+  $.each(builds, function(index, src) {
+    $("#src").append("<input type='text' value='" + src.url + "' id='series" + index + "'></input>");
+  });
+
+
   $.each(builds, function(build_index, build) {
     $.get("proxy?url=" + encodeURIComponent(build.url), function(data) {
       all_builds_series.push({
