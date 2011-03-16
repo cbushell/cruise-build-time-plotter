@@ -22,20 +22,24 @@ $(document).ready(function() {
 
   $.each(builds, function(index, src) {
     var markup =
-            "<div id='{seriesId}'>" +
+            "<div>" +
               "<input type='text' value='{url}' class='url' />" +
               "<input type='text' value='{legend}' class='legend' />" +
+              "<a href='#' class='remove'>Remove</a>" +
             "</div>";
 
     markup = markup.replace("{url}", src.url);
     markup = markup.replace("{legend}", src.legend);
-    markup = markup.replace("{seriesId}", "series" + index);
     $("#series").append($(markup));
   });
 
 
   $("#chart").bind("click", function(){
     $("#series").toggle();
+  });
+
+  $("#series a").bind("click", function(){
+    $(this).parent().remove();
   });
 
 
