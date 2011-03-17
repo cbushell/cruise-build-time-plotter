@@ -1,8 +1,8 @@
 var Plotter = {
-  plot: function() {
+  plot: function(series) {
     $.plot(
             $("#chart"),
-            all_builds_series, {
+            series, {
               xaxis: { mode: "time" },
               yaxis: { tickFormatter:
                           function(milliseconds) {
@@ -11,7 +11,7 @@ var Plotter = {
               },
               legend: {
                 show: true,
-                noColumns: all_builds_series.length
+                noColumns: series.length
               }
             }
     );
