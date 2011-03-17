@@ -1,12 +1,4 @@
 $(document).ready(function() {
-  var series = [];
-
-  $("#series div").each(function(index) {
-    var url = $(this).find(".url").val();
-    var legend = $(this).find(".legend").val();
-    series.push({url: url, legend: legend});
-  });
-
 
   $("#chart").bind("click", function(){
     $("#series").toggle();
@@ -14,10 +6,10 @@ $(document).ready(function() {
 
   $("#series a").bind("click", function(){
     $(this).parent().remove();
-    Cruise.refresh(series);
+    Cruise.refresh();
   });
 
-  Cruise.refresh(series);
+  Cruise.refresh();
 }).ajaxStop(
   function(){
     Plotter.plot(Cruise.series)
